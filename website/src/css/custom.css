@@ -4,9 +4,30 @@
  * work well for content-centric websites.
  */
 
+ /* Open Sans */
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+ /* Noto Sans JP */
+ @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
+  --ifm-font-family-base: 'Open Sans', sans-serif;
+  /* --ifm-font-family-base: 'Noto Sans JP', sans-serif; */
+  --ifm-color-primary: #0077ff; /* rspress color */
+  --ifm-menu-color: #3c3c3ca8; /* rspress color */
+  --ifm-background-color: white;
+
+  --ifm-navbar-background-color: #004F9B; /* yk nav color */
+  --ifm-navbar-link-color: white; /* yk nav color */
+  --ifm-navbar-link-hover-color: #33adff;
+
+  --ifm-h1-font-size: 2rem;
+  --ifm-h2-font-size: 1.625rem;
+  --ifm-h3-font-size: 1.375rem;
+  --ifm-h4-font-size: 1.125rem;
+  --ifm-h5-font-size: 1rem;
+  --ifm-h6-font-size: 0.875rem;
+
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -15,11 +36,14 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary: #33adff; /* rspress color */
+  --ifm-menu-color: #ebebeb8f; /* rspress color */
+
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
@@ -27,4 +51,98 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #191D24; 
+}
+
+/* light/dark mode toggle icon color */
+[class*="ToggleIcon"] > path{
+  fill: white; /* SVGの色を白に設定 */
+}
+
+/* navbar */
+.navbar__link{
+  font-size: 14px;
+}
+
+/* sidebar custmize */
+
+.theme-doc-sidebar-item-link-level-1 > a,
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible a{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+.menu__link{
+  margin-top: .125rem;
+  padding: .5rem;
+}
+
+.menu__list-item:not(:first-child){
+  margin-top: 0;
+}
+
+ul.menu__list:not(.theme-doc-sidebar-menu){
+  font-size: 13px;
+  border-left: 1px solid #3c3c3c1a;
+  padding-left: 0rem;
+  margin-left: 1rem;
+}
+
+[data-theme='dark'] ul.menu__list:not(.theme-doc-sidebar-menu){
+  border-left: 1px solid #3c3c3ca8;
+}
+
+.menu__caret:before{
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
+}
+
+/* overwrite font-size */
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2rem;
+}
+.markdown h2 {
+  --ifm-h2-font-size: 1.625rem;
+  border-top: 1px solid #3c3c3c1a;
+  padding-top: 2rem;
+}
+[data-theme='dark'] .markdown h2 {
+  border-top: 1px solid #3c3c3ca8;
+}
+.markdown h3 {
+  --ifm-h3-font-size: 1.375rem;
+}
+.markdown h4 {
+  --ifm-h4-font-size: 1.125rem;
+}
+.markdown h5 {
+  --ifm-h5-font-size: 1rem;
+}
+.markdown h6 {
+  --ifm-h6-font-size: 0.875rem;
+}
+
+/** Blog */
+article {
+  padding-bottom: 2rem;
+  border-bottom: 0.1px solid #3c3c3ca8;
+}
+article h2 {
+  font-size: 1.625rem !important;
+}
+
+/** In mobile view sidebar menu color */
+@media screen and (max-width: 996px) {
+  .navbar__toggle  > svg > path{
+    stroke: white;
+  }
+  .menu{
+    background: white;
+  }
+  [data-theme='dark'] .menu{
+    background: #1B1B1D;
+  }
 }
