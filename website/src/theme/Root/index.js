@@ -8,6 +8,12 @@ export default function CustomRoot({ children }) {
     siteConfig: {customFields},
   } = useDocusaurusContext();
   const clerkKey = customFields.CLERK_PUBLISHABLE_KEY;
+  const enableAuth = customFields.ENABLE_AUTH === "true";
+  // const enableAuth = false;
+
+  if (!enableAuth) {
+    return <Root>{children}</Root>;
+  }
 
   return (
     <ClerkProvider publishableKey={clerkKey}>

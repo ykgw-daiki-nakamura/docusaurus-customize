@@ -23,6 +23,7 @@ const config = {
   customFields: {
     // Put your custom environment here
     CLERK_PUBLISHABLE_KEY: process.env.CLERK_PUBLISHABLE_KEY,
+    ENABLE_AUTH: process.env.ENABLE_AUTH || "true",
   },
 
   // GitHub pages deployment config.
@@ -36,10 +37,10 @@ const config = {
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
-  // i18n: {
-  //   defaultLocale: 'ja',
-  //   locales: ['ja'],
-  // },
+  i18n: {
+    defaultLocale: 'ja',
+    locales: ['ja'],
+  },
 
   presets: [
     [
@@ -80,7 +81,7 @@ const config = {
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {
         indexDocs: true, // ドキュメントをインデックス化
-        language: ["ja"], // 日本語対応
+        language: ['ja'], // 日本語対応
         hashed: true, // データをハッシュ化
       },
     ],
