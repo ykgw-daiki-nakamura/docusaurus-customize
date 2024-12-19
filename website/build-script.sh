@@ -1,3 +1,5 @@
+# chmod +x build-script.sh で実行権限を付与する必要あり
+
 # 1. Without authでビルド
 echo "Building without auth..."
 ENABLE_AUTH=false pnpm docusaurus build
