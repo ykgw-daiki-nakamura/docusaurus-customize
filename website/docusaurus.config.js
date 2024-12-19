@@ -110,6 +110,7 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {to: '/redocPage', label: 'API Docs', position: 'right' },
           {
             type: 'search',
             position: 'right',
