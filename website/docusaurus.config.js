@@ -80,7 +80,7 @@ const config = {
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {
         indexDocs: true, // ドキュメントをインデックス化
-        language: ["ja", "en"], // 日本語対応
+        language: ["ja"], // 日本語対応
         hashed: true, // データをハッシュ化
       },
     ],
